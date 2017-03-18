@@ -1,0 +1,47 @@
+{
+  "name": "security-headers",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./distribution/index.js",
+  "scripts": {
+    "test": "jest --config .jest",
+    "prebuild": "npm test && rimraf distribution",
+    "build": "cross-env BABEL_ENV=production babel --out-dir distribution source",
+    "prepublish": "npm run nsp && npm run build",
+    "start": "npm run build && node ./distribution/index.js",
+    "watch:start": "chokidar \"source/*.js\" \"source/**/*.js\" -c \"npm run start\"",
+    "eslint": "eslint source",
+    "eslint:fix": "eslint --fix source",
+    "repl": "npm run build && babel-node",
+    "nsp": "nsp check",
+    "watch:test": "jest --config .jest --watch",
+    "coverage": "jest --config .jest --coverage",
+    "watch:coverage": "jest --config .jest --coverage --watch"
+  },
+  "keywords": [],
+  "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-stage-3": "^6.22.0",
+    "chokidar-cli": "^1.2.0",
+    "cross-env": "^3.2.4",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "jest-cli": "^19.0.2",
+    "nsp": "^2.6.3",
+    "rimraf": "^2.6.1"
+  },
+  "files": [
+    "distribution",
+    "README.md"
+  ],
+  "dependencies": {
+    "osmosis": "^1.1.2"
+  }
+}
