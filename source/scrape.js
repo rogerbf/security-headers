@@ -2,11 +2,10 @@ module.exports = (osmosis, url, followRedirects = true, results = []) =>
   new Promise((resolve, reject) => {
     osmosis(
       `https://securityheaders.io/`,
-      Object.assign(
-        {},
-        { q: url },
-        followRedirects ? { followRedirects: `on` } : {}
-      )
+      {
+        q: url,
+        ...(followRedirects ? { followRedirects: `on` } : {})
+      }
     )
     .find(`.reportSection`)
     .set(`section`, `.reportTitle`)
