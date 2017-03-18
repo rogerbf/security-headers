@@ -8,19 +8,21 @@ module.exports = (osmosis, url, followRedirects = true, results = []) =>
         followRedirects ? { followRedirects: `on` } : {}
       )
     )
-    // .config(`user_agent`, `kind scraper`)
-    .find(`.reportTable tr`)
+    .find(`.reportSection`)
+    .set(`section`, `.reportTitle`)
+    .select(`.reportTable tr`)
     .set({
       key: `.tableLabel`,
       value: `.tableCell`
     })
-    .data(data => {
-      results.push(data)
-    })
+    .data(data => results.push(data))
     .done(() => resolve(
-      results.reduce((all, { key, value }) => ({
+      results.reduce((all, { section, key, value }) => ({
         ...all,
-        [key]: value
+        [section]: {
+          ...(all.hasOwnProperty(section) ? all[section] : {}),
+          [key]: value
+        }
       }), {})
     ))
     // .log(console.log)
