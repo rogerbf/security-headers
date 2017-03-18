@@ -43,5 +43,13 @@
   ],
   "dependencies": {
     "osmosis": "^1.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/security-headers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/security-headers/issues"
+  },
+  "homepage": "https://github.com/rogerbf/security-headers#readme"
 }
