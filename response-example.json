@@ -1,0 +1,44 @@
+{
+  "Security Report Summary": {
+    "Site:": "https://www.google.com/?gws_rd=ssl",
+    "IP Address:": "2607:f8b0:4005:801::2004",
+    "Report Time:": "19 Mar 2017 17:00:21 UTC",
+    "Report Short URL:": "https://schd.io/1c",
+    "Headers:": "X-XSS-Protection X-Frame-Options Content-Security-Policy Public-Key-Pins X-Content-Type-Options Referrer-Policy Strict-Transport-Security"
+  },
+  "Raw Headers": {
+    "HTTP/1.1": "200 OK",
+    "Date": "Sun, 19 Mar 2017 17:00:20 GMT",
+    "Expires": "-1",
+    "Cache-Control": "private, max-age=0",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Strict-Transport-Security": "max-age=86400",
+    "P3P": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\"",
+    "Server": "gws",
+    "X-XSS-Protection": "1; mode=block",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Set-Cookie": "NID=99=AI16QDBFNvQQpInJrhsjAsuqxVgYLqVyUlNe7Tn6nLW5FnD1SN5VNZxqtGXP0-Fev3hFnQCiWeSlkwZiHPUbw3jKjBmeba0jRfvRNhyoSLve1PDSTOUf3_PLIpzGaN5x5ab_VRNFWi4FIAxZ; expires=Mon, 18-Sep-2017 17:00:20 GMT; path=/; domain=.google.com; HttpOnly",
+    "Alt-Svc": "quic=\":443\"; ma=2592000; v=\"37,36,35\"",
+    "Accept-Ranges": "none",
+    "Vary": "Accept-Encoding",
+    "Transfer-Encoding": "chunked"
+  },
+  "Missing Headers": {
+    "Content-Security-Policy": "Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.",
+    "Public-Key-Pins": "HTTP Public Key Pinning protects your site from MiTM attacks using rogue X.509 certificates. By whitelisting only the identities that the browser should trust, your users are protected in the event a certificate authority is compromised.",
+    "X-Content-Type-Options": "X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is \"X-Content-Type-Options: nosniff\".",
+    "Referrer-Policy": "Referrer Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites."
+  },
+  "Other Services": {
+    "Applause": "One header down, great start! Do you want to improve your security even further? Our friends at Applause are happy to help."
+  },
+  "Warnings": {
+    "Strict-Transport-Security": "The \"max-age\" directive is too small. The minimum recommended value is 2592000 (30 days)."
+  },
+  "Additional Information": {
+    "Strict-Transport-Security": "HTTP Strict Transport Security is an excellent feature to support on your site and strengthens your implementation of TLS by getting the User Agent to enforce the use of HTTPS.",
+    "Server": "Server value has been changed. Typically you will see values like \"Microsoft-IIS/8.0\" or \"nginx 1.7.2\".",
+    "X-XSS-Protection": "X-XSS-Protection sets the configuration for the cross-site scripting filters built into most browsers. The best configuration is \"X-XSS-Protection: 1; mode=block\".",
+    "X-Frame-Options": "X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking."
+  }
+}
