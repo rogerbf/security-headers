@@ -25,7 +25,5 @@ module.exports = (osmosis, url, followRedirects = true, results = []) =>
         }
       }), {})
     ))
-    // .log(console.log)
     .error(error => reject(error))
-    // .debug(console.log)
   })
