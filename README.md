@@ -19,3 +19,7 @@ headers(`google.com`)
 ## api
 
 ### `headers(url[, followRedirects])`
+
+`url` - string
+
+`followRedirects` - boolean
