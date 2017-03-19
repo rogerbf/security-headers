@@ -7,6 +7,7 @@ module.exports = (osmosis, url, followRedirects = true, results = []) =>
         ...(followRedirects ? { followRedirects: `on` } : {})
       }
     )
+    .config(`user_agent`, `https://www.npmjs.com/package/security-headers`)
     .find(`.reportSection`)
     .set(`section`, `.reportTitle`)
     .select(`.reportTable tr`)
