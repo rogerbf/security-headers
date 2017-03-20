@@ -42,6 +42,7 @@
     "README.md"
   ],
   "dependencies": {
+    "change-case": "^3.0.1",
     "osmosis": "^1.1.2"
   },
   "repository": {

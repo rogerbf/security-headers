@@ -1,3 +1,5 @@
+const toCamelCase = require(`change-case`).camel
+
 module.exports = (osmosis, url, followRedirects = true, results = []) =>
   new Promise((resolve, reject) => {
     osmosis(
@@ -17,13 +19,26 @@ module.exports = (osmosis, url, followRedirects = true, results = []) =>
     })
     .data(data => results.push(data))
     .done(() => resolve(
-      results.reduce((all, { section, key, value }) => ({
-        ...all,
-        [section]: {
-          ...(all.hasOwnProperty(section) ? all[section] : {}),
-          [key]: value
+      results.reduce((all, data) => {
+        const section = toCamelCase(data.section)
+        const key = (
+          [ data.key ]
+          .map(key =>
+            key[key.length - 1] === `:`
+            ? key.slice(0, key.length - 1)
+            : key
+          )
+        )
+        const value = data.value
+
+        return {
+          ...all,
+          [section]: {
+            ...(all.hasOwnProperty(section) ? all[section] : {}),
+            [section === `securityReportSummary` ? toCamelCase(key) : key]: value
+          }
         }
-      }), {})
+      }, {})
     ))
     .error(error => reject(error))
   })
