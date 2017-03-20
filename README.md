@@ -11,7 +11,7 @@ const headers = require(`security-headers`)
 
 headers(`google.com`)
 .then(result => console.log(
-  `Missing headers: ${Object.keys(result['Missing Headers']).join(', ')}`
+  `Missing headers: ${result.missingHeaders}`
 ))
 .catch(console.log)
 ```
