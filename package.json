@@ -1,6 +1,6 @@
 {
   "name": "security-headers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "query securityheaders.io",
   "main": "./distribution/index.js",
   "scripts": {
