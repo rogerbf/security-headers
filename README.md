@@ -22,4 +22,4 @@ headers(`google.com`)
 
 - `url` - &lt;String&gt;
 - `followRedirects` - &lt;Boolean&gt;
-- `hide` - &kt;Boolean&gt;
+- `hide` - &lt;Boolean&gt;
