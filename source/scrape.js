@@ -1,12 +1,13 @@
 const toCamelCase = require(`change-case`).camel
 
-module.exports = (osmosis, url, followRedirects = true, results = []) =>
+module.exports = (osmosis, url, followRedirects = true, hide = false, results = []) =>
   new Promise((resolve, reject) => {
     osmosis(
       `https://securityheaders.io/`,
       {
         q: url,
-        ...(followRedirects ? { followRedirects: `on` } : {})
+        ...(followRedirects ? { followRedirects: `on` } : {}),
+        ...(hide ? { hide: `on` } : {})
       }
     )
     .config(`user_agent`, `https://www.npmjs.com/package/security-headers`)
