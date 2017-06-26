@@ -18,8 +18,8 @@ headers(`google.com`)
 
 ## api
 
-### `headers(url[, followRedirects])`
+### `headers(url[, followRedirects, hide])`
 
-`url` - string
-
-`followRedirects` - boolean
+- `url` - &lt;String&gt;
+- `followRedirects` - &lt;Boolean&gt;
+- `hide` - &kt;Boolean&gt;
