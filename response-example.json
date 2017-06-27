@@ -1,44 +1,39 @@
 {
+  "score": "F",
   "securityReportSummary": {
-    "site": "https://www.google.com/?gws_rd=ssl",
-    "ipAddress": "2607:f8b0:4005:801::2004",
-    "reportTime": "20 Mar 2017 14:02:21 UTC",
-    "reportShortUrl": "https://schd.io/1c",
-    "headers": "X-XSS-Protection X-Frame-Options Content-Security-Policy Public-Key-Pins X-Content-Type-Options Referrer-Policy Strict-Transport-Security"
+    "site": "http://www.example.com/\n                                                                                                                         - (Scan again over https)",
+    "ipAddress": "2606:2800:220:1:248:1893:25c8:1946",
+    "reportTime": "27 Jun 2017 21:15:48 UTC",
+    "reportShortUrl": "Hidden scans do not get a short URL.",
+    "headers": "Content-Security-Policy X-Frame-Options X-XSS-Protection X-Content-Type-Options Referrer-Policy"
   },
   "rawHeaders": {
     "HTTP/1.1": "200 OK",
-    "Date": "Mon, 20 Mar 2017 14:02:21 GMT",
-    "Expires": "-1",
-    "Cache-Control": "private, max-age=0",
-    "Content-Type": "text/html; charset=UTF-8",
-    "Strict-Transport-Security": "max-age=86400",
-    "P3P": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\"",
-    "Server": "gws",
-    "X-XSS-Protection": "1; mode=block",
-    "X-Frame-Options": "SAMEORIGIN",
-    "Set-Cookie": "NID=99=P3K7MhVQOkM7BTLSyZq4Yyzy2zWthhNE3aHsmryN-DyDtCFs19umDi2qLSOzkE6-X9-SOxuT2vtocyo8XEY8jyCzhCsUu-ufsi-Op9NIRPaEUjtYzp_1wP_qyF3KfgSNn2J6utrH8-9NL4F44A; expires=Tue, 19-Sep-2017 14:02:21 GMT; path=/; domain=.google.com; HttpOnly",
-    "Alt-Svc": "quic=\":443\"; ma=2592000; v=\"37,36,35\"",
-    "Accept-Ranges": "none",
+    "Cache-Control": "max-age=604800",
+    "Content-Type": "text/html",
+    "Date": "Tue, 27 Jun 2017 21:15:47 GMT",
+    "Etag": "\"359670651+gzip+ident\"",
+    "Expires": "Tue, 04 Jul 2017 21:15:47 GMT",
+    "Last-Modified": "Fri, 09 Aug 2013 23:54:35 GMT",
+    "Server": "ECS (sjc/4E52)",
     "Vary": "Accept-Encoding",
-    "Transfer-Encoding": "chunked"
+    "X-Cache": "HIT",
+    "Content-Length": "1270"
   },
   "missingHeaders": {
     "Content-Security-Policy": "Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.",
-    "Public-Key-Pins": "HTTP Public Key Pinning protects your site from MiTM attacks using rogue X.509 certificates. By whitelisting only the identities that the browser should trust, your users are protected in the event a certificate authority is compromised.",
+    "X-Frame-Options": "X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. Recommended value \"x-frame-options: SAMEORIGIN\".",
+    "X-XSS-Protection": "X-XSS-Protection sets the configuration for the cross-site scripting filter built into most browsers. Recommended value \"X-XSS-Protection: 1; mode=block\".",
     "X-Content-Type-Options": "X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is \"X-Content-Type-Options: nosniff\".",
     "Referrer-Policy": "Referrer Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites."
   },
   "otherServices": {
-    "Applause": "One header down, great start! Do you want to improve your security even further? Our friends at Applause are happy to help."
+    "Secarma": "For cybersecurity testing, consultancy & training visit our sponsor Secarma."
   },
-  "warnings": {
-    "Strict-Transport-Security": "The \"max-age\" directive is too small. The minimum recommended value is 2592000 (30 days)."
+  "upcomingHeaders": {
+    "Expect-CT": "Expect-CT allows a site to determine if they are ready for the upcoming Chrome requirements and/or enforce their CT policy."
   },
   "additionalInformation": {
-    "Strict-Transport-Security": "HTTP Strict Transport Security is an excellent feature to support on your site and strengthens your implementation of TLS by getting the User Agent to enforce the use of HTTPS.",
-    "Server": "Server value has been changed. Typically you will see values like \"Microsoft-IIS/8.0\" or \"nginx 1.7.2\".",
-    "X-XSS-Protection": "X-XSS-Protection sets the configuration for the cross-site scripting filters built into most browsers. The best configuration is \"X-XSS-Protection: 1; mode=block\".",
-    "X-Frame-Options": "X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking."
+    "Server": "Server value has been changed. Typically you will see values like \"Microsoft-IIS/8.0\" or \"nginx 1.7.2\"."
   }
 }
