@@ -1,6 +1,6 @@
 const toCamelCase = require(`change-case`).camel
 
-module.exports = (osmosis, url, followRedirects = true, hide = false, results = []) =>
+module.exports = (osmosis, url, followRedirects = true, hide = false, results = [], score) =>
   new Promise((resolve, reject) => {
     osmosis(
       `https://securityheaders.io/`,
@@ -11,6 +11,8 @@ module.exports = (osmosis, url, followRedirects = true, hide = false, results = 
       }
     )
     .config(`user_agent`, `https://www.npmjs.com/package/security-headers`)
+    .set(`score`, `.score`)
+    .data(data => { score = data.score })
     .find(`.reportSection`)
     .set(`section`, `.reportTitle`)
     .select(`.reportTable tr`)
@@ -39,7 +41,7 @@ module.exports = (osmosis, url, followRedirects = true, hide = false, results = 
             [section === `securityReportSummary` ? toCamelCase(key) : key]: value
           }
         }
-      }, {})
+      }, { score })
     ))
     .error(error => reject(error))
   })
