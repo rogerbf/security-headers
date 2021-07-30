@@ -7,13 +7,12 @@
     "test": "jest --config .jest",
     "prebuild": "npm test && rimraf distribution",
     "build": "cross-env BABEL_ENV=production babel --out-dir distribution source",
-    "prepublish": "npm run nsp && npm run build",
+    "prepublish": "npm run build",
     "start": "npm run build && node ./distribution/index.js",
     "watch:start": "chokidar \"source/*.js\" \"source/**/*.js\" -c \"npm run start\"",
     "eslint": "eslint source",
     "eslint:fix": "eslint --fix source",
     "repl": "npm run build && babel-node",
-    "nsp": "nsp check",
     "watch:test": "jest --config .jest --watch",
     "coverage": "jest --config .jest --coverage",
     "watch:coverage": "jest --config .jest --coverage --watch"
@@ -34,7 +33,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "jest-cli": "^19.0.2",
-    "nsp": "^2.6.3",
     "rimraf": "^2.6.1"
   },
   "files": [
