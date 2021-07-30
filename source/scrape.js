@@ -15,7 +15,7 @@ module.exports = (osmosis, url, followRedirects = true, hide = false, results = 
     .data(data => { score = data.score })
     .find(`.reportSection`)
     .set(`section`, `.reportTitle`)
-    .select(`.reportTable tr`)
+    .select(`.reportTable tr.tableRow`)
     .set({
       key: `.tableLabel`,
       value: `.tableCell`
